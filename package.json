@@ -1,0 +1,25 @@
+{
+    "name": "cordova-plugin-save-file-stream",
+    "version": "0.1.5",
+    "description": "Cordova plugin for saving large files via native file pickers with stream support (iOS + Android)",
+    "cordova": {
+      "id": "cordova-plugin-save-file-stream",
+      "platforms": ["android", "ios"]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ideadesignmedia/cordova-plugin-save-file-stream"
+    },
+    "keywords": [
+      "cordova",
+      "plugin",
+      "ios",
+      "android",
+      "stream",
+      "save",
+      "file",
+      "download"
+    ],
+    "author": "ideadesignmedia",
+    "license": "UNLICENSED"
+  }

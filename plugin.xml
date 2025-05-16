@@ -1,0 +1,32 @@
+<plugin id="cordova-plugin-save-file-stream" version="0.1.5"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>StreamSave</name>
+    <js-module src="www/StreamSave.js" name="StreamSave">
+        <clobbers target="cordova.plugins.streamSave" />
+    </js-module>
+    <preference name="USESWIFTLANGUAGEVERSION" default="5" />
+    <preference name="UseSwiftLanguageVersion" value="5" />
+
+    <!-- Android -->
+    <platform name="android">
+        <source-file src="src/android/StreamSave.java" target-dir="src/com/example/streamsave" />
+        <source-file src="src/android/FileUtils.java" target-dir="src/com/example/streamsave" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+      </platform>
+
+      <platform name="ios">
+        <source-file src="src/ios/StreamSave.swift" />
+        <config-file target="config.xml" parent="/*">
+          <feature name="StreamSave">
+            <param name="ios-package" value="StreamSave" />
+            <param name="swift" value="true" />
+          </feature>
+        </config-file>
+
+        <framework src="MobileCoreServices.framework" />
+        <framework src="UniformTypeIdentifiers.framework" />
+      </platform>
+</plugin>

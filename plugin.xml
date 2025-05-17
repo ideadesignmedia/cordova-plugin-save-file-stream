@@ -1,4 +1,4 @@
-<plugin id="cordova-plugin-save-file-stream" version="0.1.5"
+<plugin id="cordova-plugin-save-file-stream" version="0.1.12"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>StreamSave</name>
@@ -10,23 +10,28 @@
 
     <!-- Android -->
     <platform name="android">
-        <source-file src="src/android/StreamSave.java" target-dir="src/com/example/streamsave" />
-        <source-file src="src/android/FileUtils.java" target-dir="src/com/example/streamsave" />
+        <source-file src="src/android/StreamSave.java" target-dir="src/com/ideadesignmedia/streamsave" />
+        <source-file src="src/android/FileUtils.java" target-dir="src/com/ideadesignmedia/streamsave" />
         <config-file target="AndroidManifest.xml" parent="/*">
-          <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         </config-file>
-      </platform>
+        <config-file target="config.xml" parent="/*">
+            <feature name="StreamSave">
+                <param name="android-package" value="com.ideadesignmedia.streamsave.StreamSave" />
+            </feature>
+        </config-file>
+    </platform>
 
-      <platform name="ios">
+    <platform name="ios">
         <source-file src="src/ios/StreamSave.swift" />
         <config-file target="config.xml" parent="/*">
-          <feature name="StreamSave">
-            <param name="ios-package" value="StreamSave" />
-            <param name="swift" value="true" />
-          </feature>
+            <feature name="StreamSave">
+                <param name="ios-package" value="StreamSave" />
+                <param name="swift" value="true" />
+            </feature>
         </config-file>
 
         <framework src="MobileCoreServices.framework" />
         <framework src="UniformTypeIdentifiers.framework" />
-      </platform>
+    </platform>
 </plugin>

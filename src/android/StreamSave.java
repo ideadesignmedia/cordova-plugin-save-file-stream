@@ -1,4 +1,4 @@
-package com.example.streamsave;
+package com.ideadesignmedia.streamsave;
 
 import android.app.Activity;
 import android.content.Intent;
